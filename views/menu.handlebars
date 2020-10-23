@@ -1,0 +1,50 @@
+
+<nav>
+    <a href="/restaurants">Home</a>
+    <a href="/about">About</a>
+</nav>
+
+
+
+
+<h1>{{menu.title}}</h1>
+<h3><a href="/restaurants/{{restaurant.id}}/menus" >at {{restaurant.name}}</a></h3>
+<div class="menu-img" style="background-image: url({{restaurant.image}}")>
+<section class="single-menu">
+    <article class="menu">
+        <div>
+        <main class="title">{{menu.title}}   
+            <a class="edit" href="/restaurants/{{restaurant.id}}/menus/{{menu.id}}/edit">📝  </a>
+            <a class="bin" onclick="return confirm('Are you sure you want to delete {{menu.title}}?')" href="/restaurants/{{restaurant.id}}/menus/{{menu.id}}/delete">🗑️</a>      
+        </main>
+        <div class="items">
+        {{#each items}}
+        <form action="/restaurants/{{../restaurant.id}}/menus/{{../menu.id}}/items/{{this.id}}/edit" method="post">
+            <div>
+                <input class="edit-item-name" name="name" type="text" placeholder="Item Name" value="{{this.name}}" required>
+                <input class="edit-item-price price" name="price" type="number" step="0.01" placeholder="Item Price" value="{{this.price}}" required>
+                <button class="submit-item">✅</button>
+                <button class="delete-item" type="button"><a class="bin" onclick="return confirm('Are you sure you want to delete {{this.name}}?')" href="/restaurants/{{../restaurant.id}}/menus/{{../menu.id}}/items/{{this.id}}/delete"> 🗑️</a> </button>
+            </div>
+        </form>
+        {{/each}}
+    
+        <form action="/restaurants/{{restaurant.id}}/menus/{{menu.id}}/items" method="POST">
+            <input class="add-item-name" name="name" type="text" placeholder="Item Name" required>
+            <input class="add-item-price price" name="price" type="number" step="0.01" placeholder="Item Price" required>
+            <button class="add-item">➕</button>
+        </form> 
+        </div>
+        </div>  
+    </article>
+</section>
+</div>
+
+
+<script type="application/javascript">
+    const item_list = document.getElementsByClassName("items")
+    const height = item_list[0].clientHeight +40
+    const article = document.getElementsByClassName("menu")
+    article[0].style.height = `${height}px`
+
+</script>

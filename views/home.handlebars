@@ -1,0 +1,45 @@
+
+<nav>
+    <a class="home"href="/">Home</a>
+    <a class="about"href="/about">About</a>
+</nav>
+
+<div class="container"></div>
+    <h1>Restaurants</h1>
+    <h3>Click on a restaurant to view their menus</h3>
+    <section>
+        {{#each restaurants}}
+        <a class="res-link" href="/restaurants/{{this.id}}/menus">
+        <article class="card">
+            <main class="title">{{this.name}} </main>
+            <img class={{this.id}} src={{this.image}}>
+            </br>
+            <footer class="number-menus">{{this.menus.length}} menus</footer>
+        </article>
+        </a>
+        {{/each}}
+        
+        <a class="res-link">
+        <article class="card restaurant-add">
+            
+            <form action="/restaurants" method="POST">
+                <main class="title">Add Restaurant </br></main>
+                    <fieldset>
+                        <input class="add-res-form" name="name" type="text" placeholder="Restaurant Name" required>
+                        <input class="add-res-form" name="image" type="url" placeholder="Image URL" required>
+                        <div class="button-div">
+                            <button class="button">Add</button>
+                        </div>
+                    </fieldset>
+            </form>
+            <footer class="number-menus"></footer>
+        </article>
+        </a>
+       
+    </section>
+    </br>
+
+    <footer class="footer">
+        The date/time is: {{date}}
+    </footer>
+</div>

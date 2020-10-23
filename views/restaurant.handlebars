@@ -1,0 +1,69 @@
+
+<nav>
+    <a href="/restaurants">Home</a>
+    <a href="/about">About</a>
+</nav>
+
+
+
+
+<h1>
+    <a href="/restaurants/{{restaurant.id}}/menus" >{{restaurant.name}}</a>
+    <div class="modify-restaurant">
+        <a class="edit" href="/restaurants/{{restaurant.id}}/edit">📝 </a>
+        <a class="bin" onclick="return confirm('Are you sure you want to delete {{restaurant.name}} restaurant?')" href="/restaurants/{{restaurant.id}}/delete">🗑️</a>
+    </div>
+</h1>
+
+<div class="menu-img" style="background-image: url({{restaurant.image}}")>
+<section class="menu-section">
+    {{#each menus}}
+        <article class="menu-card"> 
+            <main class="title"><a href="/restaurants/{{this.RestaurantId}}/menus/{{this.id}}/items">{{this.title}}</a>
+                <a class="edit" href="/restaurants/{{this.RestaurantId}}/menus/{{this.id}}/edit">📝 </a>
+                <a class="bin" onclick="return confirm('Are you sure you want to delete {{this.title}}?')" href="/restaurants/{{this.RestaurantId}}/menus/{{this.id}}/delete">🗑️</a>
+            </main>
+            <a href="/restaurants/{{this.RestaurantId}}/menus/{{this.id}}/items">
+            <dl class="items-list"> 
+                {{#each this.items}}
+                    <div>
+                        <dt>{{this.name}}</dt>
+                        <dd class="price">{{this.price}}</dd>
+                    </div>
+                {{/each}}
+            </dl>
+            </a>
+        </article>
+    {{/each}}
+
+    <article class="menu-card menu-add">
+        <form class="menu-form" action="/restaurants/{{restaurant.id}}/menus" method="POST">
+            <main class="title">Add Menu</br></main>
+                <fieldset>
+                    <input class="add-menu-form" name="title" type="text" placeholder="Menu Name" required>
+                    <div class="items-form">
+                    <input class="add-menu-form" name="name" type="text" placeholder="First Item Name" required>
+                    <input class="add-menu-form" name="price" type="number" step="0.01" placeholder="First Item Price" required>
+                    </div>
+                    <div class="button-div">
+                        <button class="button">Add</button>
+                    </div>
+                </fieldset>
+        </form>
+    </article>
+</section>
+</div>
+
+<script type="application/javascript">
+    const menu_cards = document.getElementsByClassName("menu-card")
+    const heights = []
+    for (i=0; i<menu_cards.length; i++){
+        heights.push(menu_cards[i].clientHeight)
+    }
+    heights.sort()
+    setHeight = heights.pop()-55
+    for (i=0; i<menu_cards.length; i++){
+        menu_cards[i].style.height = `${setHeight}px`
+    }
+
+</script>

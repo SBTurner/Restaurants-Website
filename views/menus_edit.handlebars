@@ -1,0 +1,13 @@
+<form class="menu-form" action="/restaurants/{{restaurant.id}}/menus/{{menu.id}}/edit" method="POST">
+    <main class="title">Edit Menu</br></main>
+        <fieldset>
+            <input class="add-menu-form" name="title" type="text" placeholder="Menu Name" value="{{menu.title}}" required>
+            <div class="items-form">
+            </div>
+            <div class="button-div">
+                <button class="update-button">Update</button>
+                <a href="/restaurants/{{restaurant.id}}/menus"><button type="button" class="cancel-button">Cancel</button></a>
+            </div>
+        </fieldset>
+</form>
+

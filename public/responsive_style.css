@@ -1,0 +1,286 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: American Typewriter, serif;
+    size:100%;
+}
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.25rem;
+    margin: 0;
+    color: #404040;
+}
+h3{
+    text-align: center;
+    text-emphasis: italic;
+    padding: 0.25rem;
+    margin: 0;
+    font-size: 85%;
+    color: #404040
+    
+}
+.modify-restaurant{
+    font-size: 60%
+}
+nav {
+    color: seashell;
+    margin: 0;
+    background-color: palevioletred;
+    text-align: right;
+    padding: 0;
+    width: 100%;
+}
+.res-link, nav>a{
+    text-decoration: none;
+    padding: 0.25em;
+    font-size: 1.25rem;
+    color: inherit; 
+}
+a {
+    text-decoration: none;
+    color:inherit;
+}
+a:visited{
+    color: inherit; 
+}
+footer.footer{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    height: 0.8rem;
+    background-color:pink;
+    text-align: center;
+    font-size: 0.5rem;
+    margin: 0;
+    padding: 0.25rem;
+}
+main {
+    font-family: American Typewriter, serif;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding-bottom:0.5rem;
+
+}
+section {
+    width:calc(100%-0.5rem);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    gap: 0.5rem;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.menu-section{
+    border-top: none;
+    border-bottom: none
+}
+article.menu{
+    min-height: max-content;
+    border-top: none;
+    border-bottom: none;
+    padding: 1rem;
+}
+article {
+    height:20rem;
+    background-color: whitesmoke;
+    width: calc(100%-1rem);
+    margin: 0.5rem;
+    padding: 1rem;
+}
+.restaurant-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.items{
+    overflow: hidden
+}
+article.menu-card{
+    background-color: whitesmoke;
+    width: calc(100%-1rem);
+    margin: 0.5rem;
+    min-height:15rem;
+    height: max-content;
+    min-height: 25rem;
+    display: inline;
+    padding: 1rem;
+}
+article>img {
+    position: relative;
+    width: 100%;
+    height: 82%;
+    object-fit: cover;
+    
+}
+article>footer {
+    text-align: right;
+    margin: 0.25rem;
+    font-size:70%;
+    vertical-align: middle;
+}
+article:hover {
+    margin: 0.25rem;
+    padding:1.25rem;
+}
+form{
+    margin: 0 auto 0 auto;
+}
+.add-res-form{
+    padding: 12px 12px;
+    margin-top: 1rem;
+    width: 80%
+}
+.add-menu-form {
+    padding: 12px 12px;
+    margin-top: 1rem;
+    width: 90%
+}
+.add-item-name, .edit-item-name{
+    float: left;
+    padding: 12px 12px;
+    margin: 1rem;
+    width: 70%; 
+    
+}
+.add-item-price, .edit-item-price{
+    float: left;
+    padding: 12px 12px;
+    margin: 1rem;
+    width: 10%;
+}
+input:invalid {
+    outline: red
+}
+button{
+    width: 50px;
+    border-radius: 20rem;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+.submit-item, .delete-item, .add-item{
+    width: 70px;
+    border: none;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    float: right;
+    margin-bottom: 1rem;
+}
+.update-button, .cancel-button{
+    width: 70px;
+    border-radius: 20rem;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+.update-restaurant{
+    padding: 5rem;
+    width: 70%;
+}
+label{
+    width: 3.25rem;
+    text-align:right;
+    display: inline-block;
+}
+.button-div{
+    text-align: center;
+}
+fieldset{
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.menu-img{
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 50rem;
+}
+
+dl div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.items-list:hover{
+    background: lightgray
+}
+.items-list{
+    margin-top: 0
+}
+
+article.menu-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.menu-form, .item-form{
+    width:80%
+}
+section.single-menu{
+    width:calc(100%-0.5rem);
+    height: max-content;
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem;
+    gap: 0.5rem;
+    border-top: none;
+    border-bottom: none;
+}
+@media screen and (min-width: 40em) {
+/* css for medium screens goes here */
+    section {
+        grid-template-columns: 1fr 1fr;
+    }
+    .menu-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav>a {
+        font-size: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+    h3 {
+        font-size: 90%;
+    }
+    footer.footer{
+        font-size: 0.6rem;
+    }
+    article>footer{
+        font-size:70%;
+    }
+}
+
+@media screen and (min-width: 60em) {
+/* css for massive screens goes here */
+    section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .menu-section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    nav>a {
+        font-size: 1.75rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 125%;
+    }
+    footer.footer{
+        font-size: 0.75rem;
+    }
+    article>footer{
+        font-size:80%;
+    }
+}

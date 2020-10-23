@@ -1,0 +1,18 @@
+<form class="update-restaurant" action="/restaurants/{{restaurant.id}}/edit" method="POST">
+    <main class="title">Edit Restaurant </br></main>
+        <fieldset>
+            <div>
+                <label for="name">Name</label>
+                <input class="add-res-form" id="name" name="name" type="text" placeholder="Restaurant Name" value="{{restaurant.name}}" required>
+            </div>
+            <div>
+                <label for="image">Image</label>
+                <input class="add-res-form" id="image" name="image" type="url" placeholder="Image URL" value="{{restaurant.image}}" required>
+            </div>
+            <div class="button-div">
+                <button class="update-button">Update</button>
+                <a href="/restaurants/{{restaurant.id}}/menus"><button type="button" class="cancel-button">Cancel</button></a>
+                
+            </div>
+        </fieldset>
+</form>
